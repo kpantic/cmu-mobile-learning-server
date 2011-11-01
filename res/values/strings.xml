@@ -52,5 +52,7 @@ Device model: <xliff:g id="device_model">%s</xliff:g>\n
 Firmware version: <xliff:g id="firmware_revision">%s</xliff:g>\n
 Kernel version: <xliff:g id="kernel_version">%s</xliff:g>\n
 Build number: <xliff:g id="build_number">%s</xliff:g>\n
-</string>       
+</string>
+<string name="video_activity_name">VideoActivity</string>
+<string name="image_activity_name">imageActivity</string>       
 </resources>

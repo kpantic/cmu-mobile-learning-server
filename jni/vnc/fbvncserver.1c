@@ -252,9 +252,9 @@ static void init_fb_server(int argc, char **argv)
     } 
     
 #ifdef DONATE_VERSION
-    vncscr->httpDir="/data/data/org.onaips.vnc_donate/";
+    vncscr->httpDir="/data/data/org.cmusv.ozprototyping_donate/";
 #else
-    vncscr->httpDir="/data/data/org.onaips.vnc/";
+    vncscr->httpDir="/data/data/org.cmusv.ozprototyping/";
 #endif
     vncscr->serverFormat.redShift=scrinfo.red.offset;
     vncscr->serverFormat.greenShift=scrinfo.green.offset; 

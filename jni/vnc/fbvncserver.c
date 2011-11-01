@@ -48,7 +48,7 @@
 #include "rfb/keysym.h"
 #include "suinput.h"
 
-#define SOCK_PATH  "org.onaips.vnc.localsocket"
+#define SOCK_PATH  "org.cmusv.ozprototyping.localsocket"
 
 #define CONCAT2(a,b) a##b
 #define CONCAT2E(a,b) CONCAT2(a,b)
@@ -262,13 +262,20 @@ static rfbNewClientHookPtr clientHook(rfbClientPtr cl)
 
 void CutText(char* str,int len, struct _rfbClientRec* cl)
 {
-  str[len]='\0';
-  char *header="~CLIP|";
-  char *msg=malloc(sizeof(char)*(strlen(str) + strlen(header)));
-  msg[0]='\0';
-  strcat(msg,header);
-  strcat(msg,str);
-  send_remote_msg(msg);
+
+	FILE *fp = fopen("/data/data/org.cmusv.ozprototyping/files/messages", "wb");
+	
+	int count = fwrite(str, 1, len, fp);
+	
+    printf("Wrote %zu bytes. fclose(fp) %s.\n", count, fclose(fp) == 0 ? "succeeded" : "failed");
+
+	/*str[len]='\0';
+	char *header="~CLIP|";
+	char *msg=malloc(sizeof(char)*(strlen(str) + strlen(header)));
+	//msg[0]='\0';
+	strcat(msg,header);
+	strcat(msg,str);
+	send_remote_msg(msg);*/ 
 }
 
 
@@ -312,7 +319,7 @@ static void init_fb_server(int argc, char **argv)
     } 
     
 
-    vncscr->httpDir="/data/data/org.onaips.vnc/files/";
+    vncscr->httpDir="/data/data/org.cmusv.ozprototyping/files/";
 
     
     vncscr->serverFormat.redShift=scrinfo.red.offset;

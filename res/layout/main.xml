@@ -7,39 +7,19 @@
   >
   
 <LinearLayout
+  android:id="@+id/MainView1"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent" 
   android:orientation="vertical"
   android:gravity="center_horizontal"
-  >
-
+  >  
     <ImageView  
 		android:layout_marginTop="24dp" 
         android:layout_width="wrap_content" 
         android:layout_height="wrap_content" 
         android:scaleType="center"
         android:src="@drawable/droidvnclogo" />
-
-<Button android:textSize="30sp" android:id="@+id/Button01" android:layout_height="wrap_content" android:text="Start Server"
-		android:layout_width="wrap_content"
-		android:layout_marginTop="24dp"
-		android:background="@drawable/btnstart"
-		android:textColor="#fff"
-		android:shadowDy="1.0"
-		android:shadowRadius="0.5"
-		android:shadowColor="#111"
-		>
-</Button>
-<Button android:textSize="30sp" android:id="@+id/Button02" android:layout_height="wrap_content" android:text="Stop Server"
-		android:layout_width="wrap_content"
-		android:layout_marginTop="10dp"
-		android:background="@drawable/btnstop"
-		android:textColor="#fff"
-		android:shadowDy="1.0"
-		android:shadowRadius="0.5"
-		android:shadowColor="#111"
-		>
-</Button> 
+    <Button android:text="Refresh Status" android:id="@+id/button1" android:layout_width="wrap_content" android:layout_height="wrap_content"></Button> 
 
 
 <TextView android:textSize="30sp" android:text="@+id/TextView01" android:id="@+id/stateLabel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingTop="10dp"
@@ -54,7 +34,6 @@
 		android:gravity="center"
 >
 </TextView> 
- 
 </LinearLayout>
    
  
